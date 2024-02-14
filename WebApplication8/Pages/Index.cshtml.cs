@@ -20,5 +20,26 @@ namespace WebApplication8.Pages
         public void OnGet()
         {
         }
+
+        //public IActionResult OnPost()
+        //{
+        //    return Content("Hello world!");
+        //}
+
+        public JsonResult OnPost([FromBody] IndexViewModel json)
+        {
+            return new JsonResult(json);
+        }
+
+        public JsonResult OnPostTest([FromBody] IndexViewModel json)
+        {
+            return new JsonResult(json);
+        }
+    }
+
+    public class IndexViewModel
+    {
+        public string name { get; set; }
+        public string lastname { get; set; }
     }
 }
